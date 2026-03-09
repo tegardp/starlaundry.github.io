@@ -68,9 +68,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 68px;
+            height: 96px;
         }
-        .nav-logo { height: 44px; }
+        .nav-logo { height: 80px; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
         .nav-links a {
             font-weight: 600;
@@ -190,7 +190,7 @@
             text-align: center;
             position: relative;
         }
-        .hero-card img { width: 260px; margin-bottom: 16px; }
+        .hero-card img { width: 100%; border-radius: 12px; margin-bottom: 16px; object-fit: cover; max-height: 260px; }
         .hero-card p { color: var(--gray); font-weight: 600; font-size: 1.1rem; }
         .hero-stats {
             display: grid;
@@ -455,7 +455,7 @@
             gap: 40px;
             margin-bottom: 40px;
         }
-        .footer-brand img { height: 48px; margin-bottom: 16px; filter: brightness(10); }
+        .footer-brand img { height: 120px; margin-bottom: 16px; filter: brightness(10); }
         .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
         footer h4 {
             color: var(--white);
@@ -506,7 +506,7 @@
             .hero-buttons { justify-content: center; }
             .hero-visual { order: -1; }
             .hero-card { padding: 28px; }
-            .hero-card img { width: 180px; }
+            .hero-card img { width: 100%; max-height: 200px; }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
             .pricing-cards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
             .pricing-cards.two-col { grid-template-columns: 1fr; }
@@ -580,7 +580,7 @@
         </div>
         <div class="hero-visual">
             <div class="hero-card">
-                <img src="logo.png" alt="Star Laundry Logo">
+                <img src="mesin.jpg" alt="Foto Mesin Logo">
                 <p>Laundry Modern Harga Merakyat</p>
                 <div class="hero-stats">
                     <div>
@@ -699,7 +699,7 @@
                     <table class="price-table">
                         <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
                         <tbody>
-                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 10.000</td><td class="duration">30 menit</td></tr>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 10.000</td><td class="duration">40 menit</td></tr>
                         </tbody>
                     </table>
                     <div class="price-note">* Tidak termasuk deterjen dan plastik</div>
@@ -727,7 +727,7 @@
                     <table class="price-table">
                         <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
                         <tbody>
-                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 12.500</td><td class="duration">30 menit**</td></tr>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 12.500</td><td class="duration">40 menit**</td></tr>
                         </tbody>
                     </table>
                     <div class="price-note">** Drop-off sesuai antrian mesin</div>
