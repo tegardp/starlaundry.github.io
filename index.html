@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Laundry Boyolali — Bersih Wangi, Pasti Rapi</title>
+    <meta name="description" content="Star Laundry Boyolali - Laundry modern dengan mesin kapasitas besar, dryer profesional, dan setrika uap. Self service & full service tersedia. Antar jemput GRATIS!">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --yellow: #FBB818;
+            --yellow-light: #FFF3D0;
+            --blue: #2AADE0;
+            --blue-dark: #1B8EC2;
+            --blue-light: #E8F6FD;
+            --dark: #1a1a2e;
+            --gray: #6b7280;
+            --gray-light: #f3f4f6;
+            --white: #ffffff;
+            --radius: 16px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+        img { max-width: 100%; height: auto; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== Navbar ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: var(--shadow); }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo { height: 44px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--dark); margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+
+        /* ===== Hero ===== */
+        .hero {
+            padding: 140px 0 100px;
+            background: linear-gradient(160deg, var(--blue-light) 0%, var(--white) 50%, var(--yellow-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(42,173,224,0.08) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(251,184,24,0.1) 0%, transparent 70%);
+            bottom: -50px;
+            left: -50px;
+            border-radius: 50%;
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--yellow-light);
+            color: #b8860b;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero h1 span { color: var(--blue); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 36px;
+            max-width: 480px;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+        }
+        .btn-wa:hover { box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+        .btn-outline {
+            background: var(--white);
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+        .btn-outline:hover { background: var(--blue-light); box-shadow: var(--shadow); }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+        }
+        .hero-card img { width: 260px; margin-bottom: 16px; }
+        .hero-card p { color: var(--gray); font-weight: 600; font-size: 1.1rem; }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-light);
+        }
+        .hero-stat-num { font-size: 1.5rem; font-weight: 800; color: var(--blue); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gray); }
+
+        /* ===== Features ===== */
+        .features { background: var(--white); }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--white);
+            border: 1px solid #e5e7eb;
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        .feature-icon.blue { background: var(--blue-light); }
+        .feature-icon.yellow { background: var(--yellow-light); }
+        .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.5; }
+
+        /* ===== Pricing ===== */
+        .pricing { background: var(--gray-light); }
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+        .pricing-tab {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 2px solid #e5e7eb;
+            background: var(--white);
+            color: var(--gray);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pricing-tab.active {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+        }
+        .pricing-group { display: none; }
+        .pricing-group.active { display: block; }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .pricing-cards.two-col {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 740px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .price-card:hover { transform: translateY(-4px); }
+        .price-card.popular {
+            border: 2px solid var(--yellow);
+        }
+        .popular-badge {
+            position: absolute;
+            top: 16px;
+            right: -32px;
+            background: var(--yellow);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 40px;
+            transform: rotate(45deg);
+        }
+        .price-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+        .price-card .price-desc { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .price-table th {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray);
+            padding: 8px 0;
+            border-bottom: 2px solid var(--gray-light);
+        }
+        .price-table td {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .price-table .price-val { font-weight: 800; color: var(--blue); }
+        .price-table .duration { color: var(--gray); font-size: 0.85rem; }
+        .price-note {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 12px;
+        }
+
+        /* ===== Why Us ===== */
+        .why-us { background: var(--white); }
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .comparison-table thead th {
+            padding: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .comparison-table thead th:first-child { background: var(--gray-light); text-align: left; }
+        .comparison-table thead th:nth-child(2) { background: var(--blue); color: var(--white); }
+        .comparison-table thead th:nth-child(3) { background: var(--gray-light); color: var(--gray); }
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+        .comparison-table td:first-child { font-weight: 600; background: #fafafa; }
+        .comparison-table td:nth-child(2) { text-align: center; background: var(--blue-light); }
+        .comparison-table td:nth-child(3) { text-align: center; color: var(--gray); }
+        .check { color: #22c55e; font-weight: bold; font-size: 1.2rem; }
+        .cross { color: #ef4444; font-weight: bold; font-size: 1.2rem; }
+
+        /* ===== Promo ===== */
+        .promo { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); color: var(--white); }
+        .promo h2 { color: var(--white); }
+        .promo .section-subtitle { color: rgba(255,255,255,0.8); }
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .promo-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .promo-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+        .promo-emoji { font-size: 2.5rem; margin-bottom: 12px; }
+        .promo-card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+        .promo-card p { font-size: 0.9rem; opacity: 0.85; line-height: 1.5; }
+
+        /* ===== Location ===== */
+        .location { background: var(--gray-light); }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .location-info { display: flex; flex-direction: column; gap: 20px; }
+        .loc-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+        .loc-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .loc-card .loc-type {
+            display: inline-block;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+        .loc-card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 8px; }
+        .loc-card .loc-detail { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .loc-card .loc-detail span { font-size: 0.9rem; }
+        .location-map {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .location-map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: linear-gradient(160deg, var(--yellow-light) 0%, var(--white) 50%, var(--blue-light) 100%);
+            text-align: center;
+        }
+        .cta h2 { font-size: 2.4rem; }
+        .cta p {
+            color: var(--gray);
+            font-size: 1.15rem;
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img { height: 48px; margin-bottom: 16px; filter: brightness(10); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+        footer h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.9rem; list-style: none; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ===== Floating WA ===== */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+        .wa-float svg { width: 32px; height: 32px; fill: white; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 4px 30px rgba(37,211,102,0.8); }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { margin: 0 auto 36px; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-card { padding: 28px; }
+            .hero-card img { width: 180px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-cards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+            .pricing-cards.two-col { grid-template-columns: 1fr; }
+            .promo-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+            .location-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { max-width: 100%; }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table td, .comparison-table th { padding: 12px; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            nav .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                gap: 16px;
+                align-items: center;
+            }
+            section { padding: 60px 0; }
+            h2 { font-size: 1.7rem; }
+        }
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .pricing-tabs { flex-wrap: wrap; }
+            .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .hero-stat-num { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="container nav-inner">
+        <img src="logo.png" alt="Star Laundry" class="nav-logo">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="#promo">Promo</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+            <li><a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="nav-cta">WhatsApp Kami</a></li>
+        </ul>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-inner">
+        <div>
+            <span class="hero-badge">LAUNDRY MODERN DI BOYOLALI</span>
+            <h1>Bersih Wangi,<br><span>Pasti Rapi</span></h1>
+            <p>Laundry dengan mesin kapasitas besar 20kg, dryer profesional, dan setrika uap. Tersedia self service untuk yang mau hemat, full service untuk yang mau praktis.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="btn btn-wa">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Order via WhatsApp
+                </a>
+                <a href="#harga" class="btn btn-outline">Lihat Harga</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <img src="logo.png" alt="Star Laundry Logo">
+                <p>Laundry Modern Harga Merakyat</p>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">20kg</div>
+                        <div class="hero-stat-label">Kapasitas Mesin</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">3 Jam</div>
+                        <div class="hero-stat-label">Tercepat Selesai</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">Gratis</div>
+                        <div class="hero-stat-label">Antar Jemput</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="layanan">
+    <div class="container">
+        <h2>Kenapa Pilih Star Laundry?</h2>
+        <p class="section-subtitle">Kami menggunakan peralatan profesional untuk hasil cucian yang lebih bersih, wangi, dan rapi</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon blue">&#127744;</div>
+                <h3>Dryer Profesional</h3>
+                <p>Tidak tergantung cuaca. Musim hujan? Cucian tetap kering sempurna dalam hitungan menit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon yellow">&#9832;</div>
+                <h3>Setrika Uap</h3>
+                <p>Hasil setrika lebih rapi dan halus dibanding setrika biasa. Baju seperti baru lagi.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">&#9881;</div>
+                <h3>Mesin 20kg</h3>
+                <p>Kapasitas besar, cucian tidak kusut. Bersih merata karena ada ruang gerak yang cukup.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon yellow">&#128172;</div>
+                <h3>Notifikasi Otomatis</h3>
+                <p>Cucian selesai? Langsung dapat notifikasi WhatsApp. Tidak perlu tanya-tanya lagi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="harga">
+    <div class="container">
+        <h2>Harga Layanan</h2>
+        <p class="section-subtitle">Pilih layanan sesuai kebutuhan. Semua dikerjakan dengan mesin profesional.</p>
+
+        <div class="pricing-tabs">
+            <button class="pricing-tab active" onclick="showPricing('kiloan')">Laundry Kiloan</button>
+            <button class="pricing-tab" onclick="showPricing('selfservice')">Self-Service</button>
+            <button class="pricing-tab" onclick="showPricing('dropoff')">Drop-Off</button>
+        </div>
+
+        <!-- Kiloan -->
+        <div class="pricing-group active" id="pricing-kiloan">
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Cuci Setrika Wangi</h3>
+                    <p class="price-desc">Cuci + keringkan + setrika uap + wangi</p>
+                    <table class="price-table">
+                        <thead><tr><th>Durasi</th><th>Harga/kg</th></tr></thead>
+                        <tbody>
+                            <tr><td class="duration">6 Jam (Express)</td><td class="price-val">Rp 13.000</td></tr>
+                            <tr><td class="duration">1 Hari</td><td class="price-val">Rp 10.000</td></tr>
+                            <tr><td class="duration">2 Hari</td><td class="price-val">Rp 7.000</td></tr>
+                            <tr><td class="duration">Reguler</td><td class="price-val">Rp 6.000</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* Minimal 3 Kg</div>
+                </div>
+                <div class="price-card popular">
+                    <div class="popular-badge">FAVORIT</div>
+                    <h3>Cuci Lipat Rapi</h3>
+                    <p class="price-desc">Cuci + keringkan + lipat rapi</p>
+                    <table class="price-table">
+                        <thead><tr><th>Durasi</th><th>Harga/kg</th></tr></thead>
+                        <tbody>
+                            <tr><td class="duration">3 Jam (Express)</td><td class="price-val">Rp 8.000</td></tr>
+                            <tr><td class="duration">6 Jam</td><td class="price-val">Rp 6.500</td></tr>
+                            <tr><td class="duration">1 Hari</td><td class="price-val">Rp 5.000</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* Minimal 3 Kg</div>
+                </div>
+                <div class="price-card">
+                    <h3>Setrika Wangi</h3>
+                    <p class="price-desc">Setrika uap + pewangi premium</p>
+                    <table class="price-table">
+                        <thead><tr><th>Durasi</th><th>Harga/kg</th></tr></thead>
+                        <tbody>
+                            <tr><td class="duration">6 Jam (Express)</td><td class="price-val">Rp 10.000</td></tr>
+                            <tr><td class="duration">1 Hari</td><td class="price-val">Rp 7.500</td></tr>
+                            <tr><td class="duration">2 Hari</td><td class="price-val">Rp 5.000</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* Minimal 3 Kg</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self Service -->
+        <div class="pricing-group" id="pricing-selfservice">
+            <div class="pricing-cards two-col">
+                <div class="price-card">
+                    <h3>Cuci Saja</h3>
+                    <p class="price-desc">Cuci sendiri pakai mesin besar kami</p>
+                    <table class="price-table">
+                        <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 10.000</td><td class="duration">30 menit</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* Tidak termasuk deterjen dan plastik</div>
+                </div>
+                <div class="price-card">
+                    <h3>Kering Saja</h3>
+                    <p class="price-desc">Keringkan pakai dryer profesional kami</p>
+                    <table class="price-table">
+                        <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 10.000</td><td class="duration">40 menit</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* Tidak termasuk deterjen dan plastik</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drop Off -->
+        <div class="pricing-group" id="pricing-dropoff">
+            <div class="pricing-cards two-col">
+                <div class="price-card">
+                    <h3>Cuci Saja</h3>
+                    <p class="price-desc">Tinggal taruh, kami yang jalankan mesin</p>
+                    <table class="price-table">
+                        <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 12.500</td><td class="duration">30 menit**</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">** Drop-off sesuai antrian mesin</div>
+                </div>
+                <div class="price-card">
+                    <h3>Kering Saja</h3>
+                    <p class="price-desc">Tinggal taruh, kami keringkan pakai dryer</p>
+                    <table class="price-table">
+                        <thead><tr><th>Kapasitas</th><th>Harga</th><th>Durasi</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maks. 7 Kg</td><td class="price-val">Rp 12.500</td><td class="duration">40 menit**</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">** Drop-off sesuai antrian mesin</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Us / Comparison -->
+<section class="why-us" id="keunggulan">
+    <div class="container">
+        <h2>Star Laundry vs Laundry Biasa</h2>
+        <p class="section-subtitle">Lihat sendiri bedanya pakai peralatan profesional</p>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Star Laundry</th>
+                    <th>Laundry Biasa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pengeringan</td>
+                    <td><span class="check">&#10003;</span> Dryer mesin</td>
+                    <td><span class="cross">&#10007;</span> Jemur matahari</td>
+                </tr>
+                <tr>
+                    <td>Setrika</td>
+                    <td><span class="check">&#10003;</span> Setrika uap</td>
+                    <td><span class="cross">&#10007;</span> Setrika biasa</td>
+                </tr>
+                <tr>
+                    <td>Kapasitas Mesin</td>
+                    <td><span class="check">&#10003;</span> 20kg besar</td>
+                    <td><span class="cross">&#10007;</span> Kecil / terbatas</td>
+                </tr>
+                <tr>
+                    <td>Notifikasi</td>
+                    <td><span class="check">&#10003;</span> Otomatis via WA</td>
+                    <td><span class="cross">&#10007;</span> Manual / telepon</td>
+                </tr>
+                <tr>
+                    <td>Self Service</td>
+                    <td><span class="check">&#10003;</span> Tersedia</td>
+                    <td><span class="cross">&#10007;</span> Tidak ada</td>
+                </tr>
+                <tr>
+                    <td>Antar Jemput</td>
+                    <td><span class="check">&#10003;</span> Gratis (S&K)</td>
+                    <td><span class="cross">&#10007;</span> Jarang tersedia</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Promo -->
+<section class="promo" id="promo">
+    <div class="container">
+        <h2>Promo Spesial</h2>
+        <p class="section-subtitle">Hemat lebih banyak dengan promo-promo menarik dari Star Laundry</p>
+        <div class="promo-grid">
+            <div class="promo-card">
+                <div class="promo-emoji">&#127775;</div>
+                <h3>Cuci Pertama Rp 3.000/kg</h3>
+                <p>Khusus pelanggan baru! Rasakan sendiri kualitas cucian Star Laundry dengan harga spesial.</p>
+            </div>
+            <div class="promo-card">
+                <div class="promo-emoji">&#127873;</div>
+                <h3>Cuci 10x Gratis 1x</h3>
+                <p>Kumpulkan stamp setiap cuci. Setelah 10 kali cuci, dapatkan 1 kali cuci lipat GRATIS!</p>
+            </div>
+            <div class="promo-card">
+                <div class="promo-emoji">&#129309;</div>
+                <h3>Ajak Teman Diskon Rp 5.000</h3>
+                <p>Ajak teman ke Star Laundry — kamu dan temanmu masing-masing dapat diskon Rp 5.000!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Location -->
+<section class="location" id="lokasi">
+    <div class="container">
+        <h2>Lokasi Kami</h2>
+        <p class="section-subtitle">Kunjungi outlet Star Laundry terdekat</p>
+        <div class="location-grid">
+            <div class="location-info">
+                <div class="loc-card">
+                    <span class="loc-type">Full Service & Self Service</span>
+                    <h3>Star Laundry Boyolali</h3>
+                    <div class="loc-detail">
+                        <span>&#128205; Boyolali, Jawa Tengah</span>
+                    </div>
+                    <div class="loc-detail">
+                        <span>&#128222; 0822-2567-2756</span>
+                    </div>
+                    <div class="loc-detail">
+                        <span>&#128247; @starlaundry.boyolali</span>
+                    </div>
+                    <div class="loc-detail">
+                        <span>&#128337; Buka Setiap Hari</span>
+                    </div>
+                </div>
+                <div class="loc-card">
+                    <h3>Layanan Antar Jemput</h3>
+                    <p>Gratis antar jemput untuk area Boyolali (S&K berlaku). Cukup pesan via WhatsApp, cucian kami jemput dan antarkan kembali ke rumah Anda.</p>
+                    <a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20pakai%20layanan%20antar%20jemput" class="btn btn-wa" style="margin-top: 16px; display: inline-flex; padding: 12px 24px; font-size: 0.9rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Pesan Antar Jemput
+                    </a>
+                </div>
+            </div>
+            <div class="location-map">
+                <div style="padding: 40px; text-align: center; color: var(--gray);">
+                    <div style="font-size: 3rem; margin-bottom: 12px;">&#128205;</div>
+                    <p style="font-weight: 600; margin-bottom: 8px;">Star Laundry Boyolali</p>
+                    <p style="font-size: 0.9rem;">Boyolali, Jawa Tengah</p>
+                    <a href="https://maps.google.com/?q=Star+Laundry+Boyolali" target="_blank" class="btn btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 0.9rem;">Buka di Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Siap Cuci di Star Laundry?</h2>
+        <p>Order sekarang via WhatsApp atau langsung datang ke outlet kami. Cucian bersih, wangi, dan rapi menanti!</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="btn btn-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Order via WhatsApp
+            </a>
+            <a href="https://instagram.com/starlaundry.boyolali" target="_blank" class="btn btn-outline">
+                Ikuti Instagram Kami
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Star Laundry">
+                <p>Laundry modern di Boyolali dengan mesin kapasitas besar, dryer profesional, dan setrika uap. Bersih wangi, pasti rapi.</p>
+            </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="#harga">Cuci Setrika Wangi</a></li>
+                    <li><a href="#harga">Cuci Lipat Rapi</a></li>
+                    <li><a href="#harga">Setrika Wangi</a></li>
+                    <li><a href="#harga">Self-Service</a></li>
+                    <li><a href="#harga">Drop-Off</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li>&#128222; 0822-2567-2756</li>
+                    <li>&#128247; @starlaundry.boyolali</li>
+                    <li>&#128205; Boyolali, Jawa Tengah</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Star Laundry Boyolali. Semua hak dilindungi.
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20tanya" class="wa-float" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Pricing tabs
+    function showPricing(tab) {
+        document.querySelectorAll('.pricing-group').forEach(g => g.classList.remove('active'));
+        document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('pricing-' + tab).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
