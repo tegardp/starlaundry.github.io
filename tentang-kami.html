@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami — Star Laundry Boyolali</title>
+    <meta name="description" content="Tentang Star Laundry Boyolali - Laundry modern dengan mesin kapasitas besar, dryer profesional, dan setrika uap di Boyolali, Jawa Tengah.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --yellow: #FBB818; --yellow-light: #FFF3D0;
+            --blue: #2AADE0; --blue-dark: #1B8EC2; --blue-light: #E8F6FD;
+            --dark: #1a1a2e; --gray: #6b7280; --gray-light: #f3f4f6; --white: #ffffff;
+            --radius: 16px; --shadow: 0 4px 24px rgba(0,0,0,0.08); --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: var(--dark); line-height: 1.6; background: var(--white); }
+        img { max-width: 100%; height: auto; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 96px; }
+        .nav-logo { height: 80px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--dark); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta { background: linear-gradient(135deg, #25D366, #128C7E); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--dark); margin: 5px 0; border-radius: 2px; }
+
+        /* Hero Banner */
+        .page-hero { padding: 160px 0 80px; background: linear-gradient(160deg, var(--blue-light) 0%, var(--white) 100%); text-align: center; }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; }
+        .page-hero h1 span { color: var(--blue); }
+        .page-hero p { color: var(--gray); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+
+        /* Content */
+        .content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-block { margin-bottom: 48px; }
+        .content-block h2 { font-size: 1.5rem; font-weight: 800; text-align: left; margin-bottom: 16px; color: var(--dark); }
+        .content-block p { color: var(--gray); margin-bottom: 16px; font-size: 1rem; }
+        .content-block ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .content-block li { display: flex; align-items: start; gap: 12px; color: var(--gray); }
+        .content-block li::before { content: ''; width: 8px; height: 8px; background: var(--blue); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+        .info-card { background: var(--gray-light); border-radius: var(--radius); padding: 32px; }
+        .info-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+        .info-card .info-row { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; }
+        .info-card .info-label { font-weight: 700; min-width: 140px; }
+        .info-card .info-val { color: var(--gray); }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .value-card { background: var(--white); border: 1px solid #e5e7eb; border-radius: var(--radius); padding: 28px; text-align: center; }
+        .value-icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .value-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .value-card p { font-size: 0.9rem; color: var(--gray); }
+
+        /* Footer */
+        footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand img { height: 120px; margin-bottom: 16px; filter: brightness(10); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+        footer h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.9rem; list-style: none; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+
+        /* WA Float */
+        .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.5); animation: pulse 2s infinite; }
+        .wa-float:hover { transform: scale(1.1); }
+        .wa-float svg { width: 32px; height: 32px; fill: white; }
+        @keyframes pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.8)} }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            nav .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 96px; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: var(--shadow); gap: 16px; align-items: center; }
+            .content-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-inner">
+        <a href="index.html"><img src="logo.png" alt="Star Laundry" class="nav-logo"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#harga">Harga</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="nav-cta">WhatsApp Kami</a></li>
+        </ul>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Tentang <span>Star Laundry</span></h1>
+        <p>Laundry modern di Boyolali yang mengutamakan kualitas, kecepatan, dan kepuasan pelanggan</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <div class="content-grid">
+            <div>
+                <div class="content-block">
+                    <h2>Siapa Kami</h2>
+                    <p><strong>Star Laundry</strong> adalah layanan laundry modern yang berlokasi di Boyolali, Jawa Tengah. Kami hadir untuk memberikan solusi pencucian pakaian yang bersih, wangi, dan rapi dengan menggunakan peralatan profesional berstandar tinggi.</p>
+                    <p>Kami percaya bahwa setiap orang berhak mendapatkan hasil cucian berkualitas dengan harga yang terjangkau. Oleh karena itu, kami menyediakan berbagai pilihan layanan mulai dari self-service untuk yang ingin hemat, hingga full-service untuk yang ingin praktis.</p>
+                </div>
+                <div class="content-block">
+                    <h2>Keunggulan Kami</h2>
+                    <ul>
+                        <li>Mesin cuci kapasitas besar 20kg — cucian tidak kusut, bersih merata</li>
+                        <li>Dryer profesional — tidak tergantung cuaca, cucian kering sempurna</li>
+                        <li>Setrika uap — hasil lebih rapi dan halus dibanding setrika biasa</li>
+                        <li>Notifikasi otomatis via WhatsApp — tidak perlu tanya sudah selesai belum</li>
+                        <li>Layanan antar jemput gratis (S&K berlaku)</li>
+                        <li>Tersedia self-service dan full-service</li>
+                        <li>Garansi cuci ulang jika tidak puas</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="info-card">
+                    <h3>Informasi Bisnis</h3>
+                    <div class="info-row">
+                        <span class="info-label">Nama Usaha</span>
+                        <span class="info-val">Star Laundry</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Jenis Usaha</span>
+                        <span class="info-val">Jasa Laundry & Dry Cleaning</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Lokasi</span>
+                        <span class="info-val">Boyolali, Jawa Tengah, Indonesia</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Telepon / WA</span>
+                        <span class="info-val">0822-2567-2756</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Instagram</span>
+                        <span class="info-val">@starlaundry.boyolali</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Layanan</span>
+                        <span class="info-val">Cuci Setrika, Cuci Lipat, Setrika, Self-Service, Drop-Off, Antar Jemput</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Jam Operasional</span>
+                        <span class="info-val">Buka Setiap Hari</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align:center; margin-bottom: 8px;">Nilai-Nilai Kami</h2>
+        <p style="text-align:center; color:var(--gray); margin-bottom: 40px;">Prinsip yang kami pegang dalam melayani setiap pelanggan</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">&#9733;</div>
+                <h3>Kualitas</h3>
+                <p>Menggunakan peralatan profesional dan deterjen berkualitas untuk hasil terbaik</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">&#9203;</div>
+                <h3>Ketepatan Waktu</h3>
+                <p>Komitmen menyelesaikan cucian sesuai estimasi yang dijanjikan</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">&#128588;</div>
+                <h3>Kepercayaan</h3>
+                <p>Menjaga setiap pakaian pelanggan dengan sistem labeling dan checklist serah terima</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Star Laundry">
+                <p>Laundry modern di Boyolali dengan mesin kapasitas besar, dryer profesional, dan setrika uap. Bersih wangi, pasti rapi.</p>
+            </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#harga">Cuci Setrika Wangi</a></li>
+                    <li><a href="index.html#harga">Cuci Lipat Rapi</a></li>
+                    <li><a href="index.html#harga">Setrika Wangi</a></li>
+                    <li><a href="index.html#harga">Self-Service</a></li>
+                    <li><a href="index.html#harga">Drop-Off</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="syarat-ketentuan.html">Syarat & Ketentuan</a></li>
+                    <li><a href="kebijakan-privasi.html">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li>&#128222; 0822-2567-2756</li>
+                    <li>&#128247; @starlaundry.boyolali</li>
+                    <li>&#128205; Boyolali, Jawa Tengah</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Star Laundry Boyolali. Semua hak dilindungi.
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20tanya" class="wa-float" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

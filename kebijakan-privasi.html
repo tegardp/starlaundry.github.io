@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi — Star Laundry Boyolali</title>
+    <meta name="description" content="Kebijakan privasi Star Laundry Boyolali. Bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --yellow: #FBB818; --yellow-light: #FFF3D0;
+            --blue: #2AADE0; --blue-dark: #1B8EC2; --blue-light: #E8F6FD;
+            --dark: #1a1a2e; --gray: #6b7280; --gray-light: #f3f4f6; --white: #ffffff;
+            --radius: 16px; --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: var(--dark); line-height: 1.6; background: var(--white); }
+        img { max-width: 100%; height: auto; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 96px; }
+        .nav-logo { height: 80px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--dark); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta { background: linear-gradient(135deg, #25D366, #128C7E); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--dark); margin: 5px 0; border-radius: 2px; }
+
+        .page-hero { padding: 160px 0 60px; background: linear-gradient(160deg, var(--blue-light) 0%, var(--white) 100%); text-align: center; }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; }
+        .page-hero h1 span { color: var(--blue); }
+        .page-hero p { color: var(--gray); font-size: 1rem; }
+
+        .content { padding: 60px 0 80px; }
+        .legal { max-width: 800px; margin: 0 auto; }
+        .legal h2 { font-size: 1.3rem; font-weight: 800; text-align: left; margin: 40px 0 16px; color: var(--dark); }
+        .legal h2:first-child { margin-top: 0; }
+        .legal p { color: var(--gray); margin-bottom: 12px; font-size: 0.95rem; }
+        .legal ol, .legal ul { margin: 0 0 16px 24px; color: var(--gray); }
+        .legal li { margin-bottom: 8px; font-size: 0.95rem; }
+        .legal strong { color: var(--dark); }
+        .update-date { color: var(--gray); font-size: 0.9rem; font-style: italic; margin-bottom: 32px; text-align: center; }
+
+        footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand img { height: 120px; margin-bottom: 16px; filter: brightness(10); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+        footer h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.9rem; list-style: none; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+
+        .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.5); animation: pulse 2s infinite; }
+        .wa-float:hover { transform: scale(1.1); }
+        .wa-float svg { width: 32px; height: 32px; fill: white; }
+        @keyframes pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.8)} }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            nav .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 96px; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: var(--shadow); gap: 16px; align-items: center; }
+            .page-hero h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-inner">
+        <a href="index.html"><img src="logo.png" alt="Star Laundry" class="nav-logo"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#harga">Harga</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="nav-cta">WhatsApp Kami</a></li>
+        </ul>
+        <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Kebijakan <span>Privasi</span></h1>
+        <p>Bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <div class="legal">
+            <p class="update-date">Terakhir diperbarui: 9 Maret 2026</p>
+
+            <h2>1. Pendahuluan</h2>
+            <p>Star Laundry ("Kami") berkomitmen untuk melindungi privasi dan data pribadi pelanggan kami ("Anda"). Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat Anda menggunakan layanan kami.</p>
+            <p>Dengan menggunakan layanan Star Laundry, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini.</p>
+
+            <h2>2. Informasi yang Kami Kumpulkan</h2>
+            <p>Kami mengumpulkan informasi berikut saat Anda menggunakan layanan kami:</p>
+            <ol>
+                <li><strong>Nama</strong> — Untuk identifikasi dan pencatatan transaksi.</li>
+                <li><strong>Nomor WhatsApp / Telepon</strong> — Untuk notifikasi status cucian, konfirmasi order, dan komunikasi terkait layanan.</li>
+                <li><strong>Alamat</strong> — Khusus untuk pelanggan yang menggunakan layanan antar jemput.</li>
+                <li><strong>Riwayat Transaksi</strong> — Detail layanan yang digunakan, berat cucian, dan nominal transaksi.</li>
+                <li><strong>Tanggal Lahir</strong> — Jika diberikan secara sukarela, untuk program loyalitas dan ucapan ulang tahun.</li>
+            </ol>
+
+            <h2>3. Cara Kami Menggunakan Informasi</h2>
+            <p>Informasi yang kami kumpulkan digunakan untuk:</p>
+            <ol>
+                <li><strong>Memproses pesanan</strong> — Mencatat, memproses, dan menyelesaikan layanan laundry Anda.</li>
+                <li><strong>Notifikasi</strong> — Mengirimkan notifikasi status cucian (selesai, siap diambil, dll.) melalui WhatsApp.</li>
+                <li><strong>Layanan antar jemput</strong> — Menjemput dan mengantarkan cucian ke alamat yang diberikan.</li>
+                <li><strong>Program loyalitas</strong> — Mengelola stamp card, paket bulanan, dan program referral.</li>
+                <li><strong>Promosi</strong> — Mengirimkan informasi promo, diskon, dan penawaran khusus melalui WhatsApp broadcast (Anda dapat berhenti berlangganan kapan saja).</li>
+                <li><strong>Peningkatan layanan</strong> — Menganalisis data transaksi untuk meningkatkan kualitas layanan kami.</li>
+            </ol>
+
+            <h2>4. Penyimpanan dan Keamanan Data</h2>
+            <ol>
+                <li>Data pribadi Anda disimpan secara digital dan/atau fisik di sistem internal Star Laundry.</li>
+                <li>Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi data Anda dari akses tidak sah, pengubahan, pengungkapan, atau penghancuran.</li>
+                <li>Akses terhadap data pelanggan dibatasi hanya untuk staf yang membutuhkan untuk menjalankan layanan.</li>
+                <li>Kami tidak menyimpan data pembayaran seperti nomor kartu kredit atau rekening bank.</li>
+            </ol>
+
+            <h2>5. Berbagi Data dengan Pihak Ketiga</h2>
+            <p>Star Laundry <strong>tidak menjual, menyewakan, atau membagikan</strong> data pribadi Anda kepada pihak ketiga untuk tujuan pemasaran mereka. Kami hanya dapat membagikan informasi Anda dalam situasi berikut:</p>
+            <ol>
+                <li><strong>Penyedia layanan</strong> — Pihak ketiga yang membantu operasional kami (misalnya layanan pengiriman untuk antar jemput), yang terikat kewajiban kerahasiaan.</li>
+                <li><strong>Kewajiban hukum</strong> — Jika diwajibkan oleh hukum, peraturan, proses hukum, atau permintaan pemerintah yang sah.</li>
+            </ol>
+
+            <h2>6. WhatsApp Broadcast</h2>
+            <ol>
+                <li>Dengan menyimpan nomor WhatsApp Star Laundry dan/atau melakukan transaksi, Anda menyetujui untuk menerima pesan broadcast terkait promo dan informasi layanan.</li>
+                <li>Frekuensi broadcast dibatasi maksimal 2 kali per minggu.</li>
+                <li>Anda dapat berhenti menerima broadcast kapan saja dengan membalas "STOP" atau menghubungi kami langsung.</li>
+            </ol>
+
+            <h2>7. Hak Anda</h2>
+            <p>Sebagai pelanggan, Anda memiliki hak untuk:</p>
+            <ol>
+                <li><strong>Mengakses</strong> — Meminta informasi tentang data pribadi Anda yang kami simpan.</li>
+                <li><strong>Memperbaiki</strong> — Meminta koreksi jika data Anda tidak akurat atau tidak lengkap.</li>
+                <li><strong>Menghapus</strong> — Meminta penghapusan data pribadi Anda dari sistem kami, kecuali data yang diperlukan untuk kewajiban hukum atau catatan transaksi.</li>
+                <li><strong>Menolak</strong> — Menolak menerima pesan promosi atau broadcast dari kami.</li>
+            </ol>
+            <p>Untuk menggunakan hak-hak di atas, silakan hubungi kami melalui WhatsApp di <strong>0822-2567-2756</strong>.</p>
+
+            <h2>8. Cookie dan Teknologi Pelacakan</h2>
+            <p>Website Star Laundry tidak menggunakan cookie atau teknologi pelacakan pihak ketiga. Kami tidak mengumpulkan data browsing atau perilaku online Anda.</p>
+
+            <h2>9. Data Anak di Bawah Umur</h2>
+            <p>Layanan Star Laundry ditujukan untuk pengguna berusia 17 tahun ke atas. Kami tidak secara sengaja mengumpulkan data pribadi dari anak di bawah umur. Jika kami mengetahui bahwa kami telah mengumpulkan data dari anak di bawah umur tanpa izin orang tua, kami akan menghapus data tersebut.</p>
+
+            <h2>10. Perubahan Kebijakan Privasi</h2>
+            <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan dipublikasikan di halaman ini dengan tanggal pembaruan yang baru. Kami menyarankan Anda untuk meninjau halaman ini secara berkala.</p>
+
+            <h2>11. Kontak</h2>
+            <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau ingin menggunakan hak-hak Anda terkait data pribadi, silakan hubungi kami:</p>
+            <ul>
+                <li><strong>Star Laundry</strong></li>
+                <li><strong>WhatsApp:</strong> 0822-2567-2756</li>
+                <li><strong>Instagram:</strong> @starlaundry.boyolali</li>
+                <li><strong>Lokasi:</strong> Boyolali, Jawa Tengah, Indonesia</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Star Laundry">
+                <p>Laundry modern di Boyolali dengan mesin kapasitas besar, dryer profesional, dan setrika uap. Bersih wangi, pasti rapi.</p>
+            </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#harga">Cuci Setrika Wangi</a></li>
+                    <li><a href="index.html#harga">Cuci Lipat Rapi</a></li>
+                    <li><a href="index.html#harga">Setrika Wangi</a></li>
+                    <li><a href="index.html#harga">Self-Service</a></li>
+                    <li><a href="index.html#harga">Drop-Off</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="syarat-ketentuan.html">Syarat & Ketentuan</a></li>
+                    <li><a href="kebijakan-privasi.html">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <ul class="footer-contact">
+                    <li>&#128222; 0822-2567-2756</li>
+                    <li>&#128247; @starlaundry.boyolali</li>
+                    <li>&#128205; Boyolali, Jawa Tengah</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Star Laundry Boyolali. Semua hak dilindungi.
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20tanya" class="wa-float" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

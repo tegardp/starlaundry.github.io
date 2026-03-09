@@ -1,0 +1,7 @@
+.claude
+.venv
+*.md
+*.pdf
+*.jpeg
+!index.html
+!logo.png
