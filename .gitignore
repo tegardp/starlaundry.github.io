@@ -5,3 +5,7 @@
 *.jpeg
 !index.html
 !logo.png
+
+# Dolt database files (added by bd init)
+.dolt/
+*.db

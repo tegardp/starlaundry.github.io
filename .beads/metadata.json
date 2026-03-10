@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "starlaundry",
+  "project_id": "370ad15c-8fec-474a-b63a-a2e35e5701eb"
+}
