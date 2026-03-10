@@ -83,6 +83,8 @@
       }
     }
     </script>
+    <link rel="alternate" hreflang="id" href="https://starlaundry-byl.com/">
+    <link rel="preload" as="image" href="logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -157,7 +159,7 @@
             <div class="feature-card">
                 <div class="feature-icon yellow">&#9832;</div>
                 <h3>Setrika Uap</h3>
-                <p>Hasil setrika lebih rapi dan halus dibanding setrika biasa. Baju seperti baru lagi.</p>
+                <p>Hasil setrika lebih rapi dan halus dibanding setrika biasa.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon blue">&#9881;</div>
@@ -286,6 +288,7 @@
                     <div class="price-note">** Drop-off sesuai antrian mesin</div>
                 </div>
             </div>
+            <p style="text-align:center; margin-top:16px; font-size:0.85rem; font-weight:700; color:var(--dark);">Catatan: Drop-off tidak termasuk lipat dan setrika.</p>
         </div>
     </div>
 </section>
@@ -480,14 +483,8 @@
         document.getElementById('pricing-' + tab).classList.add('active');
         event.target.classList.add('active');
     }
-
-    // Close mobile nav on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('navLinks').classList.remove('open');
-        });
-    });
 </script>
+<script src="main.js"></script>
 
 </body>
 </html>

@@ -106,13 +106,6 @@
         .price-row .harga { font-weight: 700; color: var(--blue-dark); }
         .pricing-note { text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--gray); font-style: italic; }
 
-        /* Paket Bulanan */
-        .paket-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 600px; margin: 0 auto; }
-        .paket-card { background: var(--white); border: 2px solid #e5e7eb; border-radius: var(--radius); padding: 40px 24px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
-        .paket-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .paket-card .paket-kg { font-size: 2.5rem; font-weight: 900; color: var(--blue); }
-        .paket-card .paket-label { font-size: 1rem; color: var(--gray); margin-bottom: 16px; }
-        .paket-card .paket-price { font-size: 1.6rem; font-weight: 800; color: var(--dark); }
 
         /* CTA Section */
         .cta-section { padding: 80px 0; text-align: center; background: linear-gradient(160deg, var(--blue-light) 0%, var(--white) 100%); }
@@ -150,7 +143,6 @@
             nav .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 96px; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: var(--shadow); gap: 16px; align-items: center; }
             .pricing-grid { grid-template-columns: 1fr; }
             .pricing-grid.two-col { grid-template-columns: 1fr; }
-            .paket-grid { grid-template-columns: 1fr; }
             .page-hero h1 { font-size: 2rem; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
         }
@@ -164,6 +156,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="harga.html">Harga</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="tentang-kami.html">Tentang Kami</a></li>
             <li><a href="kontak.html">Kontak</a></li>
             <li><a href="https://wa.me/6282225672756?text=Halo%20Star%20Laundry%2C%20saya%20mau%20order" class="nav-cta">WhatsApp Kami</a></li>
@@ -185,7 +178,7 @@
 <section class="pricing-section">
     <div class="container">
         <div class="intro-text">
-            <p>Mencari <strong>harga laundry di Boyolali</strong> yang terjangkau dengan kualitas terbaik? Star Laundry Boyolali menyediakan berbagai pilihan layanan laundry mulai dari laundry kiloan, self-service, drop-off, hingga paket bulanan. Semua layanan menggunakan mesin cuci kapasitas besar 20kg, dryer profesional, dan deterjen berkualitas tinggi sehingga pakaian Anda dijamin bersih, wangi, dan rapi.</p>
+            <p>Mencari <strong>harga laundry di Boyolali</strong> yang terjangkau dengan kualitas terbaik? Star Laundry Boyolali menyediakan berbagai pilihan layanan laundry mulai dari laundry kiloan, self-service, hingga drop-off. Semua layanan menggunakan mesin cuci kapasitas besar 20kg, dryer profesional, dan deterjen berkualitas tinggi sehingga pakaian Anda dijamin bersih, wangi, dan rapi.</p>
             <p>Kami percaya bahwa layanan laundry berkualitas tidak harus mahal. Dengan <strong>harga laundry per kg mulai dari Rp 5.000</strong>, Anda sudah bisa menikmati hasil cucian profesional. Berikut daftar harga lengkap layanan kami yang berlaku untuk tahun 2026.</p>
         </div>
 
@@ -312,33 +305,10 @@
         </div>
         <p class="pricing-note">**Drop-off sesuai antrian mesin</p>
         <p style="text-align:center; margin-top:12px; color:var(--gray); font-size:0.9rem;">Layanan drop-off sangat praktis bagi Anda yang tidak ingin menunggu. Cukup tinggalkan pakaian kotor di outlet Star Laundry, dan kami akan memprosesnya sesuai antrian mesin. Anda akan mendapat notifikasi WhatsApp saat cucian sudah siap diambil.</p>
+        <p style="text-align:center; margin-top:12px; color:var(--dark); font-size:0.9rem; font-weight:700;">Catatan: Layanan drop-off tidak termasuk lipat dan setrika. Pakaian dikembalikan dalam kondisi bersih dan kering.</p>
     </div>
 </section>
 
-<!-- Paket Bulanan -->
-<section class="pricing-section">
-    <div class="container">
-        <h2 class="section-title">Paket Bulanan</h2>
-        <p class="section-subtitle">Hemat lebih banyak dengan berlangganan paket laundry bulanan</p>
-
-        <div class="paket-grid">
-            <div class="paket-card">
-                <div class="paket-kg">20 kg</div>
-                <div class="paket-label">per bulan</div>
-                <div class="paket-price">Rp 90.000</div>
-                <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Setara Rp 4.500/kg</p>
-            </div>
-            <div class="paket-card">
-                <div class="paket-kg">40 kg</div>
-                <div class="paket-label">per bulan</div>
-                <div class="paket-price">Rp 160.000</div>
-                <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Setara Rp 4.000/kg</p>
-            </div>
-        </div>
-
-        <p style="text-align:center; margin-top:32px; color:var(--gray); font-size:0.95rem; max-width:600px; margin-left:auto; margin-right:auto;">Paket bulanan sangat ideal untuk keluarga, kos-kosan, atau usaha yang rutin membutuhkan jasa laundry setiap minggu. Dengan berlangganan, Anda mendapatkan harga lebih murah dibanding layanan satuan. Hubungi kami via WhatsApp untuk mendaftar paket bulanan.</p>
-    </div>
-</section>
 
 <!-- Laundry Satuan -->
 <section style="padding: 80px 0; background: var(--white);">
