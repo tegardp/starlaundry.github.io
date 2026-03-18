@@ -20,7 +20,7 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
 // Lebaran holiday popup (19-23 Mar 2026)
 (function() {
     var now = new Date();
-    var start = new Date(2026, 2, 19); // 19 Mar 2026
+    var start = new Date(2026, 2, 18); // 18 Mar 2026
     var end = new Date(2026, 2, 23, 23, 59, 59); // 23 Mar 2026 end of day
     if (now >= start && now <= end) {
         var overlay = document.createElement('div');
