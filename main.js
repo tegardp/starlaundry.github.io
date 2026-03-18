@@ -27,14 +27,21 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
         overlay.className = 'holiday-overlay';
         overlay.innerHTML =
             '<div class="holiday-popup">' +
+                '<button class="holiday-x" aria-label="Tutup">&times;</button>' +
                 '<div class="holiday-icon">&#127772;</div>' +
                 '<h2>Libur Hari Raya Idul Fitri</h2>' +
                 '<p>Mohon maaf lahir dan batin</p>' +
                 '<div class="holiday-dates">Libur: 19 &ndash; 23 Maret 2026</div>' +
                 '<p class="holiday-reopen">Buka kembali: 24 Maret 2026</p>' +
-                '<button class="holiday-close-btn" onclick="this.closest(\'.holiday-overlay\').remove()">Mengerti</button>' +
+                '<button class="holiday-close-btn">Mengerti</button>' +
             '</div>';
         document.body.appendChild(overlay);
+        function closePopup() { overlay.remove(); }
+        overlay.querySelector('.holiday-close-btn').addEventListener('click', closePopup);
+        overlay.querySelector('.holiday-x').addEventListener('click', closePopup);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closePopup();
+        });
     }
 })();
 
