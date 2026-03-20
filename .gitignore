@@ -1,11 +1,14 @@
 .claude
 .venv
-*.md
 *.pdf
 *.jpeg
 !index.html
 !logo.png
-
+creds.json
 # Dolt database files (added by bd init)
 .dolt/
 *.db
+
+# Marketing - track content but ignore raw data
+!marketing/**
+marketing/memory/Star Laundry Transaction History.xlsx
