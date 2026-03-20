@@ -10,5 +10,3 @@ creds.json
 *.db
 
 # Marketing - track content but ignore raw data
-!marketing/**
-marketing/memory/Star Laundry Transaction History.xlsx
