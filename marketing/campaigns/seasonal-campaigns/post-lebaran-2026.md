@@ -42,7 +42,6 @@ Phase 2: "Antar Jemput Gratis" (31 Mar–6 Apr, Week 2)
 
 Phase 3: "Ajak Teman" Referral Push (7–13 Apr, Week 3)
   What: Rp 5,000 off for BOTH referrer and friend (existing promo, amplified)
-        + Extra: if friend uses service within 7 days, referrer gets bonus 2 stamps
   Terms: Friend must be new customer
   Mechanics: Referrer gives friend their phone number at drop-off. Staff validates.
 

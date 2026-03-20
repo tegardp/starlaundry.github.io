@@ -27,8 +27,6 @@ Caranya gampang banget:
 2️⃣ Teman sebut nomor kamu pas antar cucian
 3️⃣ Dua-duanya dapat diskon! ✅
 
-🔥 **Bonus:** Kalau temanmu order dalam 7 hari, kamu dapat **2 stamp tambahan** di kartu stamp!
-
 Yuk ajak teman & tetangga cuci bareng di Star Laundry 🧺
 📍 Jl. Jambu, Boyolali
 ⏰ Buka 07.00–21.00
@@ -37,7 +35,6 @@ Yuk ajak teman & tetangga cuci bareng di Star Laundry 🧺
 
 **Catatan:**
 - Diskon berlaku per transaksi, bisa ajak lebih dari 1 teman
-- Bonus stamp diberikan setelah teman menyelesaikan order
 - Pastikan teman menyebut nomor HP referrer saat drop-off
 
 ═══════════════════════════════════════════════════════════════
